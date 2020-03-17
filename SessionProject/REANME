@@ -1,0 +1,12 @@
+session练习
+作用：解决相同用户发送不同请求时数据共享问题。
+特点：1、服务器端存储共享数据的技术
+     2、session需要依赖cookie技术
+     3、每一个用户对应一个独立的session对象
+     4、每个session对象的默认有效时长是35分钟
+     5、每次关闭浏览器的时候，重新请求都会开启一个新的session对象，因为返回的JSESSIONID保存在浏览器的内存中，是临时cookie，所以关闭之后自然消失。
+使用：HttpSession session = request.getSession();
+    修改session会话保存时间
+    session.setMaxInactiveInterval(int second);
+    设置强制失效
+    session.invalidate();
